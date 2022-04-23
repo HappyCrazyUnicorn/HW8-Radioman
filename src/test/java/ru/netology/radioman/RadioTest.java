@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class RadioTest {
 
     @Test
-    void shouldGetAndSetCurrentVolumeLevel() {
+    void shouldSetAndGetCurrentVolumeLevel() {
         Radio amazingRadio = new Radio();
         int volume = 8;
         int expected = 8;
@@ -16,10 +16,11 @@ class RadioTest {
         assertEquals(expected, amazingRadio.getCurrentVolumeLevel());
     }
 
+
     @Test
     void shouldSetVolumeLevelUpper() {
         Radio amazingRadio = new Radio();
-        int volume = 11;
+        int volume = 110;
         int expected = 0;
 
         amazingRadio.setVolumeLevel(volume);
@@ -51,8 +52,8 @@ class RadioTest {
     @Test
     void shouldIncreaseVolumeUp() {
         Radio amazingRadio = new Radio();
-        int volume = 10;
-        int expected = 10;
+        int volume = 100;
+        int expected = 100;
 
         amazingRadio.setVolumeLevel(volume);
         amazingRadio.increaseVolume();
@@ -104,8 +105,8 @@ class RadioTest {
 
     @Test
     void shouldNextStationUpperBound() {
-        Radio amazingRadio = new Radio();
-        int station = 9;
+        Radio amazingRadio = new Radio(51);
+        int station = 50;
         int expected = 0;
 
         amazingRadio.setCurrentStation(station);
@@ -115,9 +116,9 @@ class RadioTest {
 
     @Test
     void shouldPrevStationLowerBound() {
-        Radio amazingRadio = new Radio();
+        Radio amazingRadio = new Radio(5);
         int station = 0;
-        int expected = 9;
+        int expected = 4;
 
         amazingRadio.setCurrentStation(station);
         amazingRadio.prevStation();
@@ -138,7 +139,7 @@ class RadioTest {
 
     @Test
     void shouldSetStationUpper() {
-        Radio amazingRadio = new Radio();
+        Radio amazingRadio = new Radio(10);
         int station = 10;
         int expected = 0;
 
