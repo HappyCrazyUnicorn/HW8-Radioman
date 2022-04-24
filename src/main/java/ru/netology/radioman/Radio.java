@@ -1,5 +1,14 @@
 package ru.netology.radioman;
 
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+
 public class Radio {
     private String name; //название
     private int currentStation; //номер станции
@@ -13,15 +22,8 @@ public class Radio {
         this.countStation = countStation;
         this.maxStation = countStation - 1;
     }
-    public Radio(){
-
-    }
 
     //методы работы с радио
-    //текущая громкость
-    public int getCurrentVolumeLevel() {
-        return currentVolumeLevel;
-    }
 
     //установка громкости
     public void setVolumeLevel(int currentVolumeLevel) {
@@ -47,11 +49,6 @@ public class Radio {
         if (currentVolumeLevel > 0) {
             currentVolumeLevel = currentVolumeLevel - 1;
         }
-    }
-
-    //текущая станция
-    public int getCurrentStation() {
-        return currentStation;
     }
 
     //увеличение станции на 1
